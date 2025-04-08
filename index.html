@@ -17,7 +17,7 @@
       --text-subtle: rgba(255, 255, 255, 0.75);
       --accent: #22D3EE;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
@@ -25,27 +25,26 @@
       font-family: 'Inter', sans-serif;
       text-decoration: none;
     }
-    
+
     body {
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
-    
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    
-    /* Header */
+
     header {
       padding: 60px 0;
       text-align: center;
       position: relative;
     }
-    
+
     .header-glow {
       position: absolute;
       width: 600px;
@@ -58,7 +57,7 @@
       pointer-events: none;
       z-index: -1;
     }
-    
+
     h1 {
       font-size: 4rem;
       background: var(--gradient-1);
@@ -67,8 +66,7 @@
       margin-bottom: 8px;
       letter-spacing: -0.03em;
     }
-    
-    /* Section Common Styles */
+
     section {
       backdrop-filter: blur(16px);
       background: var(--glass);
@@ -79,7 +77,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     section::before {
       content: '';
       position: absolute;
@@ -87,22 +85,21 @@
       background: radial-gradient(400px circle at var(--x) var(--y), rgba(255, 255, 255, 0.06), transparent 40%);
       pointer-events: none;
     }
-    
+
     h2 {
       font-size: 2rem;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
       background: var(--gradient-2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
-    /* Skills Section */
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 12px;
     }
-    
+
     .skill {
       padding: 12px 18px;
       background: rgba(255, 255, 255, 0.04);
@@ -113,21 +110,20 @@
       color: var(--text-subtle);
       font-size: 0.95rem;
     }
-    
+
     .skill:hover {
       background: rgba(255, 255, 255, 0.08);
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
       color: white;
     }
-    
-    /* Projects Section */
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
-    
+
     .project-card {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
@@ -135,44 +131,384 @@
       transition: all 0.3s ease;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .project-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
     }
-    
+
     .project-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .project-content {
       padding: 20px;
     }
-    
+
     .project-content h3 {
       font-size: 1.2rem;
       margin-bottom: 8px;
       color: #ffffff;
     }
-    
+
     .project-content p {
       font-size: 0.9rem;
       color: var(--text-subtle);
     }
-    
-    /* VR Projects Section */
-    .vr-projects-section {
-      padding: 40px 0;
-      background: var(--glass);
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      margin: 30px 0;
-      position: relative;
-      overflow: hidden;
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      transition: all 0.3s ease;
+      color: var(--text-subtle);
+    }
+
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .contact-card p {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      border-radius: 10px;
+      background: var(--gradient-1);
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+    }
+
+<style>
+  /* Updated VR Projects Section */
+  .vr-projects-section {
+    padding: 40px 0;
+    background: var(--glass);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vr-projects-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(400px circle at var(--x) var(--y), 
+                rgba(34, 211, 238, 0.08), transparent 40%);
+    pointer-events: none;
+  }
+
+  .vr-project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .vr-video {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .vr-video:hover {
+    transform: scale(1.02);
+  }
+
+  .vr-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg);
+  }
+
+  .vr-details {
+    padding: 20px;
+  }
+
+  .vr-details .tag {
+    background: var(--gradient-2);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .vr-details h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.3;
+  }
+
+  .vr-details p {
+    color: var(--text-subtle);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .vr-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .vr-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-size: 0.95rem;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .vr-features li:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(5px);
+  }
+
+  .vr-features li::before {
+    content: '▹';
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .vr-project {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 0;
     }
     
-    .vr-projects-section::before {
-      content: '';\n      position: absolute;\n      inset: 0;\n      background: radial-gradient(400px circle at var(--x) var(--y), rgba(34, 211, 238, 0.08), transparent 40%);\n      pointer-events: none;\n    }\n    \n    .vr-project {\n      display: grid;\n      grid-template-columns: 1fr 1fr;\n      gap: 40px;\n      align-items: center;\n      padding: 20px;\n    }\n    \n    .vr-video {\n      border-radius: 16px;\n      overflow: hidden;\n      transition: transform 0.3s ease;\n    }\n    \n    .vr-video:hover {\n      transform: scale(1.02);\n    }\n    \n    .vr-video video {\n      width: 100%;\n      height: auto;\n      display: block;\n      border: 1px solid rgba(255, 255, 255, 0.1);\n      background: var(--bg);\n    }\n    \n    .vr-details {\n      padding: 20px;\n    }\n    \n    .vr-details .tag {\n      background: var(--gradient-2);\n      color: white;\n      padding: 6px 16px;\n      border-radius: 8px;\n      font-size: 0.85rem;\n      font-weight: 600;\n      display: inline-block;\n      margin-bottom: 20px;\n    }\n    \n    .vr-details h2 {\n      font-size: 2rem;\n      margin-bottom: 16px;\n      -webkit-background-clip: text;\n      -webkit-text-fill-color: transparent;\n      background: var(--gradient-2);\n      line-height: 1.3;\n    }\n    \n    .vr-details p {\n      color: var(--text-subtle);\n      margin-bottom: 20px;\n      line-height: 1.7;\n    }\n    \n    .vr-features {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n      display: grid;\n      gap: 12px;\n    }\n    \n    .vr-features li {\n      display: flex;\n      align-items: center;\n      gap: 10px;\n      color: var(--text);\n      font-size: 0.95rem;\n      padding: 12px;\n      background: rgba(255, 255, 255, 0.03);\n      border-radius: 8px;\n      transition: all 0.3s ease;\n    }\n    \n    .vr-features li:hover {\n      background: rgba(255, 255, 255, 0.06);\n      transform: translateX(5px);\n    }\n    \n    .vr-features li::before {\n      content: '▹';\n      color: var(--accent);\n      font-weight: 700;\n    }\n\n    /* Contact Section */\n    .contact-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n      gap: 20px;\n    }\n\n    .contact-card {\n      background: rgba(255, 255, 255, 0.04);\n      padding: 20px;\n      border-radius: 14px;\n      text-align: center;\n      transition: all 0.3s ease;\n      color: var(--text-subtle);\n    }\n\n    .contact-card:hover {\n      background: rgba(255, 255, 255, 0.1);\n      transform: translateY(-2px);\n      color: white;\n    }\n\n    .contact-card h3 {\n      margin-bottom: 6px;\n      font-size: 1.1rem;\n      color: white;\n    }\n\n    .contact-card p {\n      color: var(--accent);\n      font-weight: 500;\n    }\n\n    /* Resume Button */\n    .resume-btn {\n      display: inline-flex;\n      align-items: center;\n      padding: 14px 28px;\n      border-radius: 10px;\n      background: var(--gradient-1);\n      color: white;\n      font-weight: 500;\n      transition: all 0.3s ease;\n      text-decoration: none;\n      margin-top: 20px;\n    }\n\n    .resume-btn:hover {\n      transform: translateY(-2px);\n      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);\n    }\n\n    /* Media Queries for Mobile */\n    @media (max-width: 768px) {\n      h1 {\n        font-size: 3rem;\n      }\n      h2 {\n        font-size: 1.75rem;\n      }\n      section {\n        padding: 20px;\n        margin: 20px 0;\n      }\n      .projects-grid {\n        grid-template-columns: 1fr;\n      }\n      .vr-project {\n        grid-template-columns: 1fr;\n      }\n    }\n\n    @media (max-width: 480px) {\n      h1 {\n        font-size: 2.3rem;\n      }\n      .skill {\n        padding: 10px 14px;\n      }\n    }\n\n    @keyframes float {\n      0%, 100% { transform: translateY(0); }\n      50% { transform: translateY(-10px); }\n    }\n\n    .floating {\n      animation: float 4s ease-in-out infinite;\n    }\n  </style>\n</head>\n<body>\n  <header class=\"container\">\n    <div class=\"header-glow\"></div>\n    <h1 class=\"floating\">Fenil Jagani</h1>\n    <p>Creating Immersive Digital Experiences</p>\n  </header>\n\n  <main class=\"container\">\n    <section id=\"about\">\n      <h2>About Me</h2>\n      <p>I specialize in crafting boundary-pushing interactive experiences using Unity. With expertise spanning AR/VR development, mobile gaming, and real-time 3D systems, I bring ideas to life through technical excellence and creative vision.</p>\n    </section>\n\n    <section id=\"skills\">\n      <h2>Technical Skills</h2>\n      <div class=\"skills-grid\">\n        <div class=\"skill\">Unity</div>\n        <div class=\"skill\">AR &amp; VR</div>\n        <div class=\"skill\">2D &amp; 3D</div>\n        <div class=\"skill\">GitHub</div>\n        <div class=\"skill\">AWS</div>\n        <div class=\"skill\">Firebase</div>\n      </div>\n    </section>\n\n    <section id=\"projects\">\n      <h2>Featured Work</h2>\n      <div class=\"projects-grid\">\n        <a href=\"https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor\" target=\"_blank\" class=\"project-card-link\">\n          <div class=\"project-card\">\n            <img src=\"Images/Pet_Animal.png\" alt=\"Pet Doctor\">\n            <div class=\"project-content\">\n              <h3>Pet Doctor</h3>\n              <p>An engaging mobile game where you manage a virtual pet clinic. Explore realistic game logic and captivating challenges.</p>\n            </div>\n          </div>\n        </a>\n        \n        <a href=\"https://www.meta.com/experiences/peak-courage/9292506870770117/\" target=\"_blank\" class=\"project-card-link\">\n          <div class=\"project-card\">\n            <img src=\"Images/Peak_Courage.png\" alt=\"Peak Courage VR\">\n            <div class=\"project-content\">\n              <h3>Peak Courage VR</h3>\n              <p>An immersive virtual reality project that pushes the boundaries of VR game design with innovative mechanics and breathtaking environments.</p>\n            </div>\n          </div>\n        </a>\n        \n        <a href=\"https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks\" target=\"_blank\" class=\"project-card-link\">\n          <div class=\"project-card\">\n            <img src=\"Images/SnakeVsBlocks.png\" alt=\"Snake Vs Blocks\">\n            <div class=\"project-content\">\n              <h3>Snake Vs Blocks</h3>\n              <p>A dynamic arcade game with a modern twist on classic snake mechanics. Dodge obstacles and challenge your reflexes to score high.</p>\n            </div>\n          </div>\n        </a>\n      </div>\n    </section>\n\n    <!-- VR Projects Section -->\n    <section class=\"vr-projects-section\">\n      <div class=\"vr-project\">\n        <div class=\"vr-video\">\n          <video controls poster=\"Videos/VRVolleyball-poster.jpg\">\n            <source src=\"Videos/VRVolleyball.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n          </video>\n        </div>\n        <div class=\"vr-details\">\n          <div class=\"tag\">META QUEST EXPERIENCE</div>\n          <h2>Immersive VR Volleyball</h2>\n          <p>A cutting-edge virtual reality sports experience set in a tropical environment. Serve, spike, and block with realistic physics and dynamic AI opponents. Multiplayer integration is in progress.</p>\n          <ul class=\"vr-features\">\n            <li>Unity XR &amp; Interaction Toolkit</li>\n            <li>Meta Quest 2/3 Optimized</li>\n            <li>Physics-based ball interaction</li>\n            <li>Multiplayer support (In Progress)</li>\n            <li>Realistic environmental dynamics</li>\n          </ul>\n        </div>\n      </div>\n    </section>\n\n    <section id=\"contact\">\n      <h2>Connect With Me</h2>\n      <div class=\"contact-grid\">\n        <a href=\"mailto:feniljagani111@gmail.com\" class=\"contact-card\">\n          <h3>Email</h3>\n          <p>feniljagani111@gmail.com</p>\n        </a>\n        <a href=\"https://wa.me/918460483601\" class=\"contact-card\" target=\"_blank\">\n          <h3>WhatsApp</h3>\n          <p>+91 84604 83601</p>\n        </a>\n        <a href=\"https://linkedin.com/in/feniljagani\" target=\"_blank\" class=\"contact-card\">\n          <h3>LinkedIn</h3>\n          <p>/in/feniljagani</p>\n        </a>\n      </div>\n    </section>\n\n    <div style=\"text-align: center; margin: 40px 0;\">\n      <a href=\"https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view\" class=\"resume-btn\" target=\"_blank\">View Resume</a>\n    </div>\n  </main>\n\n  <script>\n    document.addEventListener('mousemove', (e) => {\n      document.querySelectorAll('section').forEach(element => {\n        const rect = element.getBoundingClientRect();\n        element.style.setProperty('--x', `${e.clientX - rect.left}px`);\n        element.style.setProperty('--y', `${e.clientY - rect.top}px`);\n      });\n    });\n  </script>\n</body>\n</html>
+    .vr-video {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .vr-details {
+      text-align: center;
+    }
+    
+    .vr-features li {
+      justify-content: center;
+    }
+  }
+    
+    @media (max-width: 768px) {
+      .vr-project {
+        flex-direction: column;
+        text-align: center;
+      }
+      .vr-details {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      section {
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .skill {
+        padding: 10px 14px;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="header-glow"></div>
+    <h1 class="floating">Fenil Jagani</h1>
+    <p>Creating Immersive Digital Experiences</p>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I specialize in crafting boundary-pushing interactive experiences using Unity. With expertise spanning AR/VR development, mobile gaming, and real-time 3D systems, I bring ideas to life through technical excellence and creative vision.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">Unity</div>
+        <div class="skill">AR & VR</div>
+        <div class="skill">2D & 3D</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Firebase</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Work</h2>
+      <div class="projects-grid">
+        <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/Pet Animal.png" alt="Pet Doctor">
+            <div class="project-content">
+              <h3>Pet Doctor</h3>
+              <p>An engaging mobile game where you manage a virtual pet clinic. Explore realistic game logic and captivating challenges.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/Peak Courage.png" alt="Peak Courage VR">
+            <div class="project-content">
+              <h3>Peak Courage VR</h3>
+              <p>An immersive virtual reality project that pushes the boundaries of VR game design with innovative mechanics and breathtaking environments.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
+            <div class="project-content">
+              <h3>Snake Vs Blocks</h3>
+              <p>A dynamic arcade game with a modern twist on classic snake mechanics. Dodge obstacles and challenge your reflexes to score high.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Updated VR Section HTML -->
+    <section class="vr-projects-section">
+      <div class="container">
+        <div class="vr-project">
+          <div class="vr-video">
+            <video controls poster="Videos/VRVolleyball-poster.jpg">
+              <source src="Videos/VRVolleyball.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="vr-details">
+            <div class="tag">META QUEST EXPERIENCE</div>
+            <h2>Immersive VR Volleyball</h2>
+            <p>
+              A cutting-edge virtual reality sports experience combining realistic physics 
+              with tropical environment design. Features dynamic AI opponents and 
+              multiplayer capabilities powered by Photon Engine.
+            </p>
+            <ul class="vr-features">
+              <li>Unity XR & Interaction Toolkit</li>
+              <li>Meta Quest 2/3 Optimized</li>
+              <li>Advanced Physics Simulation</li>
+              <li>Multiplayer support (In progress)</li>
+              <li>Dynamic Environment System</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Connect With Me</h2>
+      <div class="contact-grid">
+        <a href="mailto:feniljagani111@gmail.com" class="contact-card">
+          <h3>Email</h3>
+          <p>feniljagani111@gmail.com</p>
+        </a>
+        <a href="https://wa.me/918460483601" class="contact-card" target="_blank">
+          <h3>WhatsApp</h3>
+          <p>+91 84604 83601</p>
+        </a>
+        <a href="https://linkedin.com/in/feniljagani" target="_blank" class="contact-card">
+          <h3>LinkedIn</h3>
+          <p>/in/feniljagani</p>
+        </a>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin: 40px 0;">
+      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" class="resume-btn" target="_blank">View Resume</a>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('section').forEach(element => {
+        const rect = element.getBoundingClientRect();
+        element.style.setProperty('--x', ${e.clientX - rect.left}px);
+        element.style.setProperty('--y', ${e.clientY - rect.top}px);
+      });
+    });
+  </script>
+</body>
+</html>
