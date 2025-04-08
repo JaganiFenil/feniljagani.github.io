@@ -209,6 +209,65 @@
       box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
     }
 
+    .vr-projects-section {
+      padding: 50px 20px;
+      background-color: #1f1f1f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .vr-project {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+    .vr-video video {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    .vr-details {
+      max-width: 500px;
+    }
+    .vr-details .tag {
+      background-color: #3498db;
+      color: white;
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .vr-details h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+    .vr-details p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .vr-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .vr-details li {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+    @media (max-width: 768px) {
+      .vr-project {
+        flex-direction: column;
+        text-align: center;
+      }
+      .vr-details {
+        text-align: left;
+      }
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 3rem;
@@ -305,6 +364,32 @@
             </div>
           </div>
         </a>
+      </div>
+    </section>
+
+        <!-- VR Projects Section -->
+    <section class="vr-projects-section">
+      <div class="vr-project">
+        <div class="vr-video">
+          <video controls>
+            <source src="Videos/VRVolleyball.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="vr-details">
+          <div class="tag">VR PROJECT</div>
+          <h2>VR Volleyball</h2>
+          <p>
+            A fully immersive virtual reality volleyball experience designed for Meta Quest.
+            Users can serve, spike, and block in a realistic beachside court environment with dynamic AI opponents.
+          </p>
+          <ul>
+            <li>🏐 Built with Unity & XR Interaction Toolkit</li>
+            <li>🎮 Supports Meta Quest 2 and 3</li>
+            <li>🧠 Physics-based ball interaction</li>
+            <li>📶 Multiplayer support (Photon in progress)</li>
+          </ul>
+        </div>
       </div>
     </section>
 
