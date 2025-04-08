@@ -3,62 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fenil Jagani | Unity Game Developer</title>
+  <title>Fenil Jagani | Unity Game Developer Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .game {
-      margin-bottom: 20px;
-    }
+    /* --- Reset / Base Styles --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; }
+    a { text-decoration: none; color: #0073e6; }
+    a:hover { text-decoration: underline; }
+    
+    /* --- Header & Nav --- */
+    header { background: #0073e6; color: #fff; padding: 20px 0; }
+    nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    
+    /* --- Sections --- */
+    section { padding: 40px 20px; max-width: 1200px; margin: auto; background-color: #fff; margin-bottom: 20px; border-radius: 8px; }
+    section h2 { margin-bottom: 20px; border-bottom: 2px solid #0073e6; padding-bottom: 10px; }
+    
+    /* --- About Section --- */
+    .about p { margin-bottom: 10px; }
+    
+    /* --- Projects Section --- */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .project-item { background: #fafafa; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+    .project-item img { width: 100%; height: auto; }
+    .project-item .project-content { padding: 15px; }
+    .project-item h3 { margin-bottom: 10px; }
+    .project-item p { margin-bottom: 10px; }
+    
+    /* --- Resume Section --- */
+    .resume a { display: inline-block; padding: 10px 20px; background: #0073e6; color: #fff; border-radius: 5px; }
+    
+    /* --- Contact Section --- */
+    .contact ul { list-style: none; }
+    .contact li { margin-bottom: 10px; }
+    
+    /* --- Footer --- */
+    footer { text-align: center; padding: 20px; background: #0073e6; color: #fff; }
   </style>
 </head>
 <body>
-
-  <h1>👋 Hi, I'm Fenil Jagani</h1>
-  <p align="center"><strong>Unity Game Developer | Mobile & VR Experiences</strong></p>
-
-  <h2>🚀 Projects</h2>
-
-  <div class="game">
-    <strong>Pet Doctor</strong>  
-    <br>
-    <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank">Play Store Link</a>
-    <p>A fun and interactive mobile game where you manage a pet clinic and treat adorable animals.</p>
-  </div>
-
-  <div class="game">
-    <strong>Snake Vs Blocks</strong>  
-    <br>
-    <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank">Play Store Link</a>
-    <p>A fast-paced arcade game combining classic snake mechanics with block-breaking action.</p>
-  </div>
-
-  <div class="game">
-    <strong>Peak Courage VR</strong>  
-    <br>
-    <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank">Meta Quest Store Link</a>
-    <p>A thrilling VR experience where players face their fears on a high-altitude adventure.</p>
-  </div>
-
-  <h2>📬 Connect with Me</h2>
-  <p>
-    <a href="https://in.linkedin.com/in/feniljagani" target="_blank">LinkedIn: in/feniljagani</a>
-  </p>
-
+  
+  <!-- Navigation / Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Fenil Jagani</h1>
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about">
+      <p><strong>Objective:</strong> Motivated and results-driven Unity Developer with hands-on experience in game app development. Seeking a challenging position to leverage expertise in C, C++, C#, and advanced 2D, 3D, AR, and VR game development skills to drive innovative projects and organizational success.</p>
+      <p><strong>Technical Skills:</strong> Unity Engine (2D, 3D, AR, VR), C, C++, C#, GitHub, AWS, Firebase, Visual Studio</p>
+      <p>With professional experience at Evenmore Infotech and MeProTech, I've honed my skills in developing immersive game experiences from conception to deployment.</p>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <!-- Project 1 -->
+      <div class="project-item">
+        <img src="images/pet_doctor.jpg" alt="Pet Doctor Game">
+        <div class="project-content">
+          <h3><a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank">Pet Doctor</a></h3>
+          <p>A fun and interactive mobile game where you manage a virtual pet clinic. Experience realistic game logic and captivating gameplay.</p>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-item">
+        <img src="images/snake_vs_blocks.jpg" alt="Snake Vs Blocks">
+        <div class="project-content">
+          <h3><a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank">Snake Vs Blocks</a></h3>
+          <p>A fast-paced arcade game with an exciting twist on classic mechanics. Navigate, grow, and break through the blocks for high scores.</p>
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="project-item">
+        <img src="images/peak_courage.jpg" alt="Peak Courage VR">
+        <div class="project-content">
+          <h3><a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank">Peak Courage VR</a></h3>
+          <p>An immersive virtual reality experience that pushes the boundaries of AR/VR game design. (VR video demo coming soon!)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Resume Section -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <div class="resume">
+      <p>You can view or download my detailed resume for more information on my professional experience and skills.</p>
+      <!-- Update the href to point to your resume PDF hosted in the repo -->
+      <a href="resume.pdf" target="_blank">View/Download Resume</a>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <ul>
+        <li><strong>Mobile:</strong> +91 84604 83601</li>
+        <li><strong>Email:</strong> <a href="mailto:feniljagani111@gmail.com">feniljagani111@gmail.com</a></li>
+        <li><strong>Address:</strong> 44, Sakrata Soc, Kargilchowk, Punagam, Surat – 395010, India</li>
+        <li><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/feniljagani" target="_blank">in/feniljagani</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Fenil Jagani. All Rights Reserved.</p>
+  </footer>
+  
 </body>
 </html>
