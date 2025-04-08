@@ -2,7 +2,7 @@
 
 I'm a Unity developer specialized in creating immersive experiences across 2D, 3D, AR, and VR platforms. I blend creativity with cutting-edge technology to build interactive environments, engaging mobile games, and innovative digital experiences.
 
-🌐 **Portfolio**: [https://jaganifenil.github.io/jaganifenil/](https://jaganifenil.github.io/jaganifenil/)
+🌐 **Portfolio**: [https://jaganifenil.github.io/](https://jaganifenil.github.io/)
 
 ---
 
