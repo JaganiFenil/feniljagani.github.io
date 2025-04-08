@@ -1,170 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fenil Jagani | Unity Game Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fenil Jagani | Unity Game Developer Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #7f5af0;
-      --secondary: #2cb67d;
-      --bg: #0f0e17;
-      --text: #fffffe;
-      --card-bg: #1f1d2b;
-      --glass: rgba(255, 255, 255, 0.05);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Rubik', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      padding: 20px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 15px;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 0;
-      color: var(--text);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-
-    section {
-      background: var(--glass);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-radius: 20px;
-      margin: 20px auto;
-      padding: 40px 30px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-
-    .about-text, .resume, .contact ul {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .skills-grid {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #eef2f7; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+    header { background: #005792; color: #fff; padding: 20px 0; text-align: center; }
+    header h1 { font-size: 2rem; }
+    section { background: #fff; margin: 20px auto; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+    section h2 { font-size: 2rem; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #005792; padding-bottom: 10px; }
+    #about .about-text { max-width: 800px; margin: 0 auto; font-size: 1.1rem; text-align: center; line-height: 1.7; }
+    #skills { text-align: center; }
+    #skills .skills-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
       margin-top: 30px;
     }
-
-    .skill {
-      background-color: var(--card-bg);
+    #skills .skill {
+      background-color: #005792;
+      color: #fff;
       padding: 10px 20px;
       border-radius: 25px;
-      font-weight: 500;
-      color: var(--text);
-      transition: 0.3s ease;
-      border: 1px solid var(--primary);
-    }
-
-    .skill:hover {
-      background-color: var(--primary);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(127, 90, 240, 0.3);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .project-content {
-      padding: 20px;
-    }
-
-    .project-content h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      color: var(--secondary);
-    }
-
-    .project-content p {
       font-size: 1rem;
-      color: #ccc;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.3s;
     }
-
-    .resume a {
-      background: var(--primary);
-      color: var(--text);
-      padding: 12px 25px;
-      border-radius: 30px;
-      display: inline-block;
-      margin-top: 20px;
-      transition: background 0.3s;
+    #skills .skill:hover {
+      background-color: #003f5c;
+      transform: translateY(-3px);
     }
-
-    .resume a:hover {
-      background: var(--secondary);
+    .projects-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 30px; 
     }
-
-    .contact li {
-      margin-bottom: 10px;
+    .project-card-link {
+      text-decoration: none;
+      color: inherit;
     }
-
-    footer {
-      text-align: center;
-      color: #999;
-      margin-top: 40px;
+    .project-card { 
+      background: #f9f9f9; 
+      border: 1px solid #ddd; 
+      border-radius: 12px; 
+      overflow: hidden; 
+      transition: transform 0.3s, box-shadow 0.3s; 
     }
-
+    .project-card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    }
+    .project-card img { 
+      width: 100%; 
+      height: auto; 
+    }
+    .project-content { 
+      padding: 20px; 
+    }
+    .project-content h3 { 
+      margin-bottom: 10px; 
+      font-size: 1.4rem; 
+      color: #005792; 
+    }
+    .project-content p { 
+      font-size: 0.95rem; 
+      color: #555; 
+      line-height: 1.6; 
+    }
+    .resume { text-align: center; }
+    .resume a { 
+      margin-top: 15px; 
+      padding: 12px 25px; 
+      background: #005792; 
+      color: #fff; 
+      border-radius: 6px; 
+      font-size: 1.1rem; 
+      display: inline-block; 
+      transition: background 0.3s; 
+    }
+    .resume a:hover { 
+      background: #003f5c; 
+    }
+    .contact ul { 
+      list-style: none; 
+      padding: 0; 
+      text-align: center; 
+    }
+    .contact li { 
+      margin-bottom: 10px; 
+      font-size: 1.1rem; 
+    }
+    footer { 
+      background: #005792; 
+      color: #fff; 
+      text-align: center; 
+      padding: 20px 0; 
+    }
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      section {
-        padding: 30px 20px;
-      }
+      header h1 { font-size: 1.8rem; }
+      section { padding: 30px 20px; }
+      section h2 { font-size: 1.8rem; }
+      #skills .skills-grid { gap: 10px; }
+      #skills .skill { font-size: 0.9rem; padding: 8px 16px; }
+      .project-content h3 { font-size: 1.3rem; }
+      .project-content p { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -199,37 +145,43 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project-card">
-        <img src="Images/Pet Animal.png" alt="Pet Doctor">
-        <div class="project-content">
-          <h3><a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank">Pet Doctor</a></h3>
-          <p>Manage a virtual pet clinic with realistic game logic and captivating challenges.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank" class="project-card-link">
+        <div class="project-card">
+          <img src="Images/Pet Animal.png" alt="Pet Doctor">
+          <div class="project-content">
+            <h3>Pet Doctor</h3>
+            <p>An engaging mobile game where you manage a virtual pet clinic. Explore realistic game logic and captivating challenges.</p>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
-        <img src="Images/Peak Courage.png" alt="Peak Courage VR">
-        <div class="project-content">
-          <h3><a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank">Peak Courage VR</a></h3>
-          <p>Immersive VR game with innovative mechanics and breathtaking environments.</p>
+      <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank" class="project-card-link">
+        <div class="project-card">
+          <img src="Images/Peak Courage.png" alt="Peak Courage VR">
+          <div class="project-content">
+            <h3>Peak Courage VR</h3>
+            <p>An immersive virtual reality project that pushes the boundaries of VR game design with innovative mechanics and breathtaking environments.</p>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
-        <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
-        <div class="project-content">
-          <h3><a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank">Snake Vs Blocks</a></h3>
-          <p>Modern twist on classic snake mechanics with dynamic arcade gameplay.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank" class="project-card-link">
+        <div class="project-card">
+          <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
+          <div class="project-content">
+            <h3>Snake Vs Blocks</h3>
+            <p>A dynamic arcade game with a modern twist on classic snake mechanics. Dodge obstacles and challenge your reflexes to score high.</p>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume">
-      <p>View or download my comprehensive resume showcasing my work and achievements.</p>
-      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" target="_blank">View Resume</a>
+      <p>View or download my comprehensive resume that details my professional journey and technical accomplishments.</p>
+      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" target="_blank">View/Download Resume</a>
     </div>
   </section>
 
@@ -245,7 +197,8 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Fenil Jagani. All rights reserved.</p>
+    <p>&copy; 2025 Fenil Jagani. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
