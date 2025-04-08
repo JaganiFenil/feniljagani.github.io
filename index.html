@@ -249,6 +249,96 @@
   </style>
 </head>
 <body>
-  <!-- Body content remains unchanged -->
+  <header class="container">
+    <div class="header-glow"></div>
+    <h1 class="floating">Fenil Jagani</h1>
+    <p>Creating Immersive Digital Experiences</p>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I specialize in crafting boundary-pushing interactive experiences using Unity. With expertise spanning AR/VR development, mobile gaming, and real-time 3D systems, I bring ideas to life through technical excellence and creative vision.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">Unity</div>
+        <div class="skill">AR & VR</div>
+        <div class="skill">2D & 3D</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Firebase</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Work</h2>
+      <div class="projects-grid">
+        <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/Pet Animal.png" alt="Pet Doctor">
+            <div class="project-content">
+              <h3>Pet Doctor</h3>
+              <p>An engaging mobile game where you manage a virtual pet clinic. Explore realistic game logic and captivating challenges.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/Peak Courage.png" alt="Peak Courage VR">
+            <div class="project-content">
+              <h3>Peak Courage VR</h3>
+              <p>An immersive virtual reality project that pushes the boundaries of VR game design with innovative mechanics and breathtaking environments.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
+            <div class="project-content">
+              <h3>Snake Vs Blocks</h3>
+              <p>A dynamic arcade game with a modern twist on classic snake mechanics. Dodge obstacles and challenge your reflexes to score high.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Connect With Me</h2>
+      <div class="contact-grid">
+        <a href="mailto:feniljagani111@gmail.com" class="contact-card">
+          <h3>Email</h3>
+          <p>feniljagani111@gmail.com</p>
+        </a>
+        <a href="https://wa.me/918460483601" class="contact-card" target="_blank">
+          <h3>WhatsApp</h3>
+          <p>+91 84604 83601</p>
+        </a>
+        <a href="https://linkedin.com/in/feniljagani" target="_blank" class="contact-card">
+          <h3>LinkedIn</h3>
+          <p>/in/feniljagani</p>
+        </a>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin: 40px 0;">
+      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" class="resume-btn" target="_blank">View Resume</a>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('section').forEach(element => {
+        const rect = element.getBoundingClientRect();
+        element.style.setProperty('--x', ${e.clientX - rect.left}px);
+        element.style.setProperty('--y', ${e.clientY - rect.top}px);
+      });
+    });
+  </script>
 </body>
 </html>
