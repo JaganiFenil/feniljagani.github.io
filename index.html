@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      /* Updated gradients - removed pink from gradient-2 */
       --gradient-1: linear-gradient(135deg, #7F5AFF 0%, #5A8CFF 100%);
-      --gradient-2: linear-gradient(135deg, #FF61D8 0%, #FFA84B 100%);
+      --gradient-2: linear-gradient(135deg, #5A8CFF 0%, #2CB67D 100%);
       --neon-blue: #5A8CFF;
-      --neon-pink: #FF61D8;
       --bg: #0A0B1A;
       --glass: rgba(255, 255, 255, 0.05);
       --text: rgba(255, 255, 255, 0.9);
@@ -166,11 +166,18 @@
       border-radius: 16px;
       text-align: center;
       transition: all 0.3s ease;
+      /* Changed contact text color to a softer gray */
+      color: #B0B0B0;
     }
 
     .contact-card:hover {
       background: rgba(255, 255, 255, 0.1);
       transform: translateY(-3px);
+    }
+
+    .contact-card h3 {
+      color: var(--neon-blue);
+      margin-bottom: 8px;
     }
 
     /* Buttons & Links */
@@ -257,6 +264,10 @@
         <div class="skill">3D Mathematics</div>
         <div class="skill">Shader Programming</div>
         <div class="skill">Multiplayer Systems</div>
+        <!-- Added missing skills -->
+        <div class="skill">GitHub</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Firebase</div>
       </div>
     </section>
 
@@ -264,7 +275,36 @@
     <section id="projects">
       <h2>Signature Works</h2>
       <div class="projects-grid">
-        <!-- Project cards here -->
+        <!-- Project Card 1 -->
+        <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/Pet Animal.png" alt="Pet Doctor">
+            <div class="project-content">
+              <h3>Pet Doctor</h3>
+              <p>Manage a virtual pet clinic with realistic game logic and captivating challenges.</p>
+            </div>
+          </div>
+        </a>
+        <!-- Project Card 2 -->
+        <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/Peak Courage.png" alt="Peak Courage VR">
+            <div class="project-content">
+              <h3>Peak Courage VR</h3>
+              <p>An immersive VR game with innovative mechanics and breathtaking environments.</p>
+            </div>
+          </div>
+        </a>
+        <!-- Project Card 3 -->
+        <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
+            <div class="project-content">
+              <h3>Snake Vs Blocks</h3>
+              <p>A modern twist on classic snake mechanics with dynamic arcade gameplay.</p>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -289,12 +329,12 @@
 
     <!-- Resume Button -->
     <div style="text-align: center; margin: 40px 0;">
-      <a href="#" class="resume-btn">Download Resume</a>
+      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" target="_blank" class="resume-btn">Download Resume</a>
     </div>
   </main>
 
   <script>
-    // Interactive mouse effects
+    // Interactive mouse effects for section background glow
     document.addEventListener('mousemove', (e) => {
       document.querySelectorAll('section').forEach(element => {
         const rect = element.getBoundingClientRect();
