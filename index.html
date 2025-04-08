@@ -1,249 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fenil Jagani | Unity Game Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fenil Jagani | Unity Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #7f5af0;
-      --secondary: #2cb67d;
-      --bg: #0f0e17;
-      --text: #fffffe;
-      --card-bg: #1f1d2b;
+      --gradient-1: linear-gradient(135deg, #7F5AFF 0%, #5A8CFF 100%);
+      --gradient-2: linear-gradient(135deg, #FF61D8 0%, #FFA84B 100%);
+      --neon-blue: #5A8CFF;
+      --neon-pink: #FF61D8;
+      --bg: #0A0B1A;
       --glass: rgba(255, 255, 255, 0.05);
+      --text: rgba(255, 255, 255, 0.9);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      font-family: 'Rubik', sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text);
-      padding: 20px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
       max-width: 1200px;
-      margin: auto;
-      padding: 0 15px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
+    /* Header Styles */
     header {
+      padding: 80px 0;
       text-align: center;
-      padding: 30px 0;
-      color: var(--text);
+      position: relative;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
+    .header-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at 50% 50%, var(--neon-blue), transparent 60%);
+      opacity: 0.15;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
     }
 
-    section {
-      background: var(--glass);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-radius: 20px;
-      margin: 20px auto;
-      padding: 40px 30px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
+    h1 {
+      font-size: 4rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
-      color: var(--primary);
+      letter-spacing: -0.03em;
     }
 
-    .about-text, .resume, .contact ul {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.8;
+    /* Section Common Styles */
+    section {
+      backdrop-filter: blur(16px);
+      background: var(--glass);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 40px 0;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
     }
 
+    section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(400px circle at var(--x) var(--y), 
+                  rgba(255,255,255,0.1), transparent 40%);
+      pointer-events: none;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Skills Grid */
     .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
     }
 
     .skill {
-      background-color: var(--card-bg);
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 500;
-      color: var(--text);
-      transition: 0.3s ease;
-      border: 1px solid var(--primary);
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .skill:hover {
-      background-color: var(--primary);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
 
+    /* Project Cards */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
 
     .project-card {
-      background: var(--card-bg);
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(127, 90, 240, 0.3);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
     }
 
     .project-card img {
       width: 100%;
-      height: auto;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .project-content {
-      padding: 20px;
+      padding: 24px;
     }
 
     .project-content h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      color: var(--secondary);
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: white;
     }
 
-    .project-content p {
-      font-size: 1rem;
-      color: #ccc;
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
-    .resume a {
-      background: var(--primary);
-      color: var(--text);
-      padding: 12px 25px;
-      border-radius: 30px;
-      display: inline-block;
-      margin-top: 20px;
-      transition: background 0.3s;
-    }
-
-    .resume a:hover {
-      background: var(--secondary);
-    }
-
-    .contact li {
-      margin-bottom: 10px;
-    }
-
-    footer {
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 24px;
+      border-radius: 16px;
       text-align: center;
-      color: #999;
-      margin-top: 40px;
+      transition: all 0.3s ease;
     }
 
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Buttons & Links */
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 32px;
+      border-radius: 12px;
+      background: var(--gradient-1);
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin-top: 24px;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(122, 90, 255, 0.3);
+    }
+
+    /* Mobile Responsiveness */
     @media (max-width: 768px) {
-      header h1 {
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
         font-size: 2rem;
       }
 
       section {
-        padding: 30px 20px;
+        padding: 24px;
+        margin: 24px 0;
       }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .skill {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Floating Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .floating {
+      animation: float 4s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Fenil Jagani</h1>
-    </div>
+  <header class="container">
+    <div class="header-glow"></div>
+    <h1 class="floating">Fenil Jagani</h1>
+    <p>Creating Immersive Digital Experiences</p>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-text">
-      <p>I am a dedicated Unity Developer passionate about creating immersive game experiences across 2D, 3D, AR, and VR platforms. With expertise in C, C++, and C#, I have honed my skills at Evenmore Infotech and MeProTech, delivering creative and technically sound projects.</p>
+  <main class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I specialize in crafting boundary-pushing interactive experiences using Unity. With expertise spanning AR/VR development, mobile gaming, and real-time 3D systems, I bring ideas to life through technical excellence and creative vision.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Technical Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill">Unity Engine</div>
+        <div class="skill">C# Mastery</div>
+        <div class="skill">AR/VR Development</div>
+        <div class="skill">3D Mathematics</div>
+        <div class="skill">Shader Programming</div>
+        <div class="skill">Multiplayer Systems</div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Signature Works</h2>
+      <div class="projects-grid">
+        <!-- Project cards here -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Connect With Me</h2>
+      <div class="contact-grid">
+        <a href="mailto:feniljagani111@gmail.com" class="contact-card">
+          <h3>Email</h3>
+          <p>feniljagani111@gmail.com</p>
+        </a>
+        <a href="tel:+918460483601" class="contact-card">
+          <h3>Call</h3>
+          <p>+91 84604 83601</p>
+        </a>
+        <a href="https://linkedin.com/in/feniljagani" target="_blank" class="contact-card">
+          <h3>LinkedIn</h3>
+          <p>/in/feniljagani</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Resume Button -->
+    <div style="text-align: center; margin: 40px 0;">
+      <a href="#" class="resume-btn">Download Resume</a>
     </div>
-  </section>
+  </main>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">C</div>
-      <div class="skill">C++</div>
-      <div class="skill">C#</div>
-      <div class="skill">Unity</div>
-      <div class="skill">GitHub</div>
-      <div class="skill">AWS</div>
-      <div class="skill">Firebase</div>
-      <div class="skill">Visual Studio</div>
-    </div>
-  </section>
-  
-  </section><section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank" class="project-card-link">
-        <div class="project-card">
-          <img src="Images/Pet Animal.png" alt="Pet Doctor">
-          <div class="project-content">
-            <h3>Pet Doctor</h3>
-            <p>An engaging mobile game where you manage a virtual pet clinic. Explore realistic game logic and captivating challenges.</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank" class="project-card-link">
-        <div class="project-card">
-          <img src="Images/Peak Courage.png" alt="Peak Courage VR">
-          <div class="project-content">
-            <h3>Peak Courage VR</h3>
-            <p>An immersive virtual reality project that pushes the boundaries of VR game design with innovative mechanics and breathtaking environments.</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank" class="project-card-link">
-        <div class="project-card">
-          <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
-          <div class="project-content">
-            <h3>Snake Vs Blocks</h3>
-            <p>A dynamic arcade game with a modern twist on classic snake mechanics. Dodge obstacles and challenge your reflexes to score high.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <ul>
-        <li><strong>Mobile:</strong> +91 84604 83601</li>
-        <li><strong>Email:</strong> <a href="mailto:feniljagani111@gmail.com">feniljagani111@gmail.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/feniljagani" target="_blank">in/feniljagani</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Fenil Jagani. All rights reserved.</p>
-  </footer>
+  <script>
+    // Interactive mouse effects
+    document.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('section').forEach(element => {
+        const rect = element.getBoundingClientRect();
+        element.style.setProperty('--x', `${e.clientX - rect.left}px`);
+        element.style.setProperty('--y', `${e.clientY - rect.top}px`);
+      });
+    });
+  </script>
 </body>
 </html>
