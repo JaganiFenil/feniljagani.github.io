@@ -4,101 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Fenil Jagani | Unity Game Developer Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Optional: Icon Font for technical icons (or using Devicons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.14.0/devicon.min.css" integrity="sha512-MuvqA81PyaIrmjZepJXwdwrEVLhjiN5jeCm7N4oGH76C9dMw3T7Y5XYWQgi+OuBG0L59AtvJzVceSKpRrmAEzw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* --- Reset / Base Styles --- */
+    /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f0f2f5; color: #333; }
     a { text-decoration: none; color: #0073e6; }
     a:hover { text-decoration: underline; }
     
-    /* --- Header & Nav --- */
+    /* Header & Navigation */
     header { background: #0073e6; color: #fff; padding: 20px 0; }
-    nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+    .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav h1 { font-size: 1.8em; }
     nav ul { list-style: none; display: flex; }
-    nav ul li { margin-left: 20px; }
+    nav ul li { margin-left: 20px; font-weight: 500; }
     
-    /* --- Sections --- */
-    section { padding: 40px 20px; max-width: 1200px; margin: auto; background-color: #fff; margin-bottom: 20px; border-radius: 8px; }
-    section h2 { margin-bottom: 20px; border-bottom: 2px solid #0073e6; padding-bottom: 10px; }
+    /* Sections */
+    section { background-color: #fff; margin: 20px auto; padding: 40px 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    section h2 { font-size: 2em; margin-bottom: 20px; border-bottom: 2px solid #0073e6; padding-bottom: 10px; text-align: center; }
     
-    /* --- About Section --- */
-    .about p { margin-bottom: 10px; }
+    /* About Section */
+    #about .about-text { max-width: 800px; margin: 0 auto; font-size: 1.1em; text-align: center; }
     
-    /* --- Projects Section --- */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .project-item { background: #fafafa; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
-    .project-item img { width: 100%; height: auto; }
-    .project-item .project-content { padding: 15px; }
-    .project-item h3 { margin-bottom: 10px; }
-    .project-item p { margin-bottom: 10px; }
+    /* Technical Skills Section */
+    #skills { text-align: center; }
+    #skills .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
+    #skills .skill { font-size: 3em; color: #0073e6; }
+    #skills .skill span { display: block; font-size: 0.5em; color: #555; margin-top: 5px; }
     
-    /* --- Resume Section --- */
-    .resume a { display: inline-block; padding: 10px 20px; background: #0073e6; color: #fff; border-radius: 5px; }
+    /* Projects Section */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .project-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fafafa; transition: transform 0.3s; }
+    .project-card:hover { transform: scale(1.02); }
+    .project-card img { width: 100%; height: auto; display: block; }
+    .project-content { padding: 20px; }
+    .project-content h3 { margin-bottom: 10px; font-size: 1.5em; }
+    .project-content p { margin-bottom: 10px; font-size: 1em; color: #555; }
+    .project-links { margin-top: 10px; }
+    .project-links a { display: inline-block; margin-right: 10px; padding: 8px 14px; background: #0073e6; color: #fff; border-radius: 4px; font-size: 0.9em; transition: background 0.3s; }
+    .project-links a:hover { background: #005bb5; }
     
-    /* --- Contact Section --- */
-    .contact ul { list-style: none; }
-    .contact li { margin-bottom: 10px; }
+    /* Video Embed */
+    .video-wrapper { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; margin-top: 15px; }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     
-    /* --- Footer --- */
-    footer { text-align: center; padding: 20px; background: #0073e6; color: #fff; }
+    /* Resume Section */
+    .resume { text-align: center; }
+    .resume a { margin-top: 10px; padding: 12px 20px; background: #0073e6; color: #fff; border-radius: 4px; font-size: 1.1em; display: inline-block; transition: background 0.3s; }
+    .resume a:hover { background: #005bb5; }
+    
+    /* Contact Section */
+    .contact ul { list-style: none; padding: 0; text-align: center; }
+    .contact li { margin-bottom: 10px; font-size: 1.1em; }
+    
+    /* Footer */
+    footer { background: #0073e6; color: #fff; padding: 20px 0; text-align: center; }
+    
+    @media (max-width: 768px) {
+      nav ul li { margin-left: 10px; }
+      section { padding: 30px 15px; }
+    }
   </style>
 </head>
 <body>
-  
-  <!-- Navigation / Header -->
+
+  <!-- Header / Navigation -->
   <header>
-    <nav>
-      <div class="logo">
+    <div class="container">
+      <nav>
         <h1>Fenil Jagani</h1>
-      </div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <div class="about">
-      <p><strong>Objective:</strong> Motivated and results-driven Unity Developer with hands-on experience in game app development. Seeking a challenging position to leverage expertise in C, C++, C#, and advanced 2D, 3D, AR, and VR game development to drive innovative projects and organizational success.</p>
-      <p><strong>Technical Skills:</strong> Unity Engine (2D, 3D, AR, VR), C, C++, C#, GitHub, AWS, Firebase, Visual Studio</p>
-      <p>With professional experience at Evenmore Infotech and MeProTech, I’ve developed and optimized 2D/3D game logic, tackled AR/VR projects, and streamlined development processes to meet project deadlines.</p>
+    <div class="about-text">
+      <p>I am a dedicated Unity Developer passionate about creating immersive game experiences across 2D, 3D, AR, and VR platforms. I have honed my skills in coding (C, C++, and C#) and game development through hands-on experience at Evenmore Infotech and MeProTech. I aim to drive innovative projects with creativity and technical excellence.</p>
+    </div>
+  </section>
+  
+  <!-- Technical Skills Section -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <!-- Using Devicon icons; adjust class names as needed -->
+      <div class="skill">
+        <i class="devicon-c-plain"></i>
+        <span>C</span>
+      </div>
+      <div class="skill">
+        <i class="devicon-cplusplus-plain"></i>
+        <span>C++</span>
+      </div>
+      <div class="skill">
+        <i class="devicon-csharp-plain"></i>
+        <span>C#</span>
+      </div>
+      <div class="skill">
+        <img src="Images/unity-icon.svg" alt="Unity" style="width: 1em; height:1em;">
+        <span>Unity</span>
+      </div>
+      <div class="skill">
+        <img src="Images/github-icon.svg" alt="GitHub" style="width: 1em; height:1em;">
+        <span>GitHub</span>
+      </div>
+      <div class="skill">
+        <img src="Images/aws-icon.svg" alt="AWS" style="width: 1em; height:1em;">
+        <span>AWS</span>
+      </div>
+      <div class="skill">
+        <img src="Images/firebase-icon.svg" alt="Firebase" style="width: 1em; height:1em;">
+        <span>Firebase</span>
+      </div>
+      <div class="skill">
+        <img src="Images/vs-icon.svg" alt="Visual Studio" style="width: 1em; height:1em;">
+        <span>VS</span>
+      </div>
     </div>
   </section>
   
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <!-- Project 1: Pet Doctor -->
-      <div class="project-item">
-        <!-- Update the path to point to your Images folder -->
-        <img src="Images/Pet Animal.png" alt="Pet Doctor Game">
+    <div class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <img src="Images/Pet Animal.png" alt="Pet Doctor">
         <div class="project-content">
           <h3><a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank">Pet Doctor</a></h3>
-          <p>A fun and interactive mobile game where you manage a virtual pet clinic. Experience realistic game logic and captivating gameplay.</p>
+          <p>An engaging mobile game where you manage a virtual pet clinic. Experience realistic game logic, fun animations, and captivating challenges.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank">Store Link</a>
+            <!-- Example APK Link -->
+            <a href="https://example.com/apk/PetDoctor.apk" target="_blank">APK Download</a>
+          </div>
         </div>
       </div>
       
-      <!-- Project 2: Snake Vs Blocks -->
-      <div class="project-item">
-        <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
-        <div class="project-content">
-          <h3><a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank">Snake Vs Blocks</a></h3>
-          <p>A fast-paced arcade game with an exciting twist on classic snake mechanics. Navigate, grow, and break through the blocks for high scores.</p>
-        </div>
-      </div>
-      
-      <!-- Project 3: Peak Courage VR -->
-      <div class="project-item">
+      <!-- Project Card 2 with VR Video -->
+      <div class="project-card">
         <img src="Images/Peak Courage.png" alt="Peak Courage VR">
         <div class="project-content">
           <h3><a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank">Peak Courage VR</a></h3>
-          <p>An immersive virtual reality experience that pushes the boundaries of VR game design. (VR video demo coming soon!)</p>
+          <p>An immersive VR experience that pushes the boundaries of virtual reality game design. Explore breathtaking environments and innovative gameplay mechanics.</p>
+          <!-- VR Video Embed -->
+          <div class="video-wrapper">
+            <!-- Replace the src with your video embed (YouTube/Vimeo or custom source) -->
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Peak Courage VR Demo" allowfullscreen></iframe>
+          </div>
+          <div class="project-links">
+            <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank">Store Link</a>
+            <a href="https://example.com/apk/PeakCourageVR.apk" target="_blank">APK Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
+        <div class="project-content">
+          <h3><a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank">Snake Vs Blocks</a></h3>
+          <p>A fast-paced arcade game where classic snake mechanics meet modern twists. Guide your snake through blocks and accumulate points with every level.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank">Store Link</a>
+            <a href="https://example.com/apk/SnakeVsBlocks.apk" target="_blank">APK Download</a>
+          </div>
         </div>
       </div>
     </div>
@@ -108,11 +191,8 @@
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume">
-      <p>You can view or download my detailed resume for more information on my professional experience and skills.</p>
-      <!-- Using your Google Drive link for your resume -->
-      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" target="_blank">
-        View/Download Resume
-      </a>
+      <p>View or download my comprehensive resume that details my professional journey and skill set.</p>
+      <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" target="_blank">View/Download Resume</a>
     </div>
   </section>
   
