@@ -67,8 +67,13 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 8px;
-      margin-top: 20px; /* extra top margin for better vertical positioning */
+      margin-top: 20px; /* extra top margin */
       letter-spacing: -0.03em;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
     header p {
       font-size: 1.1rem;
@@ -99,6 +104,7 @@
       background: var(--gradient-2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      overflow-wrap: break-word; /* ensures long headings break gracefully */
     }
     
     /* Skills Section */
@@ -154,6 +160,7 @@
       font-size: 1.2rem;
       margin-bottom: 8px;
       color: #ffffff;
+      overflow-wrap: break-word; /* ensures long titles break gracefully */
     }
     .project-content p {
       font-size: 0.9rem;
@@ -198,6 +205,7 @@
     }
     .vr-details {
       padding: 20px;
+      overflow-wrap: break-word; /* fix potential text bug */
     }
     .vr-details .tag {
       background: var(--gradient-2);
@@ -216,11 +224,13 @@
       -webkit-text-fill-color: transparent;
       background: var(--gradient-2);
       line-height: 1.3;
+      overflow-wrap: break-word; /* ensures the heading won't overflow */
     }
     .vr-details p {
       color: var(--text-subtle);
       margin-bottom: 20px;
       line-height: 1.7;
+      overflow-wrap: break-word;
     }
     .vr-features {
       list-style: none;
@@ -318,26 +328,20 @@
         grid-template-columns: 1fr;
       }
     }
-    
     @media (max-width: 480px) {
       h1 { font-size: 2.3rem; }
       .skill { padding: 10px 14px; }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .floating {
-      animation: float 4s ease-in-out infinite;
+      .vr-video video {
+        max-width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
 <body>
   <header class="container">
     <div class="header-glow"></div>
-    <h1 class="floating">Fenil Jagani</h1>
+    <h1>Fenil Jagani</h1>
     <p>Creating Immersive Digital Experiences</p>
   </header>
   
@@ -365,24 +369,27 @@
     <section id="projects">
       <h2>Featured Work</h2>
       <div class="projects-grid">
+        <!-- Example Project 1 -->
         <a href="https://play.google.com/store/apps/details?id=com.USSStudio.Pet_Doctor" target="_blank" class="project-card-link">
           <div class="project-card">
-            <img src="Images/PetAnimal.png" alt="Pet Doctor">
+            <img src="Images/Pet_Animal.png" alt="Pet Doctor">
             <div class="project-content">
               <h3>Pet Doctor</h3>
               <p>An engaging mobile game where you manage a virtual pet clinic. Explore realistic game logic and captivating challenges.</p>
             </div>
           </div>
         </a>
+        <!-- Example Project 2 -->
         <a href="https://www.meta.com/experiences/peak-courage/9292506870770117/" target="_blank" class="project-card-link">
           <div class="project-card">
-            <img src="Images/PeakCourage.png" alt="Peak Courage VR">
+            <img src="Images/Peak_Courage.png" alt="Peak Courage VR">
             <div class="project-content">
               <h3>Peak Courage VR</h3>
               <p>An immersive virtual reality project that pushes the boundaries of VR game design with innovative mechanics and breathtaking environments.</p>
             </div>
           </div>
         </a>
+        <!-- Example Project 3 -->
         <a href="https://play.google.com/store/apps/details?id=com.USStudio.SnakeVsBlocks" target="_blank" class="project-card-link">
           <div class="project-card">
             <img src="Images/SnakeVsBlocks.png" alt="Snake Vs Blocks">
@@ -398,16 +405,22 @@
     <!-- VR Projects Section -->
     <section class="vr-projects-section">
       <div class="vr-project">
+        <!-- VR Video -->
         <div class="vr-video">
           <video controls poster="Videos/VRVolleyball-poster.jpg">
             <source src="Videos/VRVolleyball.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
+        <!-- VR Details -->
         <div class="vr-details">
           <div class="tag">TECH DEMO</div>
-          <h2>VR Volleyball Prototype</h2>
-          <p>Experimental prototype focusing on environmental design with dynamic tropical weather and interactive sand physics.</p>
+          <h2>VR Volleyball Prototype Demo Name Fix</h2>
+          <p>
+            Experimental prototype focusing on environmental design with dynamic tropical weather
+            and interactive sand physics. Optimized for mobile headsets, including advanced net physics
+            and variable player height calibration.
+          </p>
           <ul class="vr-features">
             <li>Unity XR &amp; Interaction Toolkit</li>
             <li>Real-time lighting transitions</li>
