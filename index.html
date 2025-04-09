@@ -220,9 +220,10 @@
     .vr-details h2 {
       font-size: 2rem;
       margin-bottom: 16px;
+      color: var(--accent); /* fallback if gradient text isn't supported */
+      background: var(--gradient-2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background: var(--gradient-2);
       line-height: 1.3;
       overflow-wrap: break-word; /* ensures the heading won't overflow */
     }
