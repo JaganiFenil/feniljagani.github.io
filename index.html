@@ -6,6 +6,7 @@
   <title>Fenil Jagani | Unity Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+    /* Root Variables */
     :root {
       --gradient-1: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
       --gradient-2: linear-gradient(135deg, #22D3EE 0%, #3B82F6 100%);
@@ -18,23 +19,24 @@
       --accent: #22D3EE;
     }
     
-    /* Remove default underlines */
-    a { text-decoration: none; color: inherit; }
-    
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
+      text-decoration: none;
     }
-    
     body {
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
-    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -43,7 +45,7 @@
     
     /* Header */
     header {
-      padding: 60px 0;
+      padding: 60px 0 30px;
       text-align: center;
       position: relative;
     }
@@ -59,18 +61,21 @@
       pointer-events: none;
       z-index: -1;
     }
-    
     h1 {
       font-size: 4rem;
       background: var(--gradient-1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 8px;
-      margin-top: 15px;
+      margin-top: 20px; /* extra top margin for better vertical positioning */
       letter-spacing: -0.03em;
     }
+    header p {
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
     
-    /* Section Common Styles */
+    /* Section Styles */
     section {
       backdrop-filter: blur(16px);
       background: var(--glass);
@@ -292,7 +297,7 @@
       box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
     }
     
-    /* Media Queries for Mobile */
+    /* Media Queries */
     @media (max-width: 768px) {
       header {
         padding: 40px 0;
@@ -309,23 +314,14 @@
         margin: 20px 0;
         border-radius: 20px;
       }
-      .projects-grid {
+      .projects-grid, .vr-project, .contact-grid {
         grid-template-columns: 1fr;
-      }
-      .vr-project {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 0;
       }
     }
     
     @media (max-width: 480px) {
-      h1 {
-        font-size: 2.3rem;
-      }
-      .skill {
-        padding: 10px 14px;
-      }
+      h1 { font-size: 2.3rem; }
+      .skill { padding: 10px 14px; }
     }
     
     @keyframes float {
@@ -399,26 +395,25 @@
       </div>
     </section>
     
+    <!-- VR Projects Section -->
     <section class="vr-projects-section">
-      <div class="container">
-        <div class="vr-project">
-          <div class="vr-video">
-            <video controls poster="Videos/VRVolleyball-poster.jpg">
-              <source src="Videos/VRVolleyball.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="vr-details">
-            <div class="tag">TECH DEMO</div>
-            <h2>VR Volleyball Prototype</h2>
-            <p>Experimental prototype focusing on environmental design with dynamic tropical weather system and interactive sand physics.</p>
-            <ul class="vr-features">
-              <li>Unity XR & Interaction Toolkit</li>
-              <li>Real-time lighting transitions</li>
-              <li>Modular asset pipeline</li>
-              <li>Physics-based interactions</li>
-            </ul>
-          </div>
+      <div class="vr-project">
+        <div class="vr-video">
+          <video controls poster="Videos/VRVolleyball-poster.jpg">
+            <source src="Videos/VRVolleyball.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="vr-details">
+          <div class="tag">TECH DEMO</div>
+          <h2>VR Volleyball Prototype</h2>
+          <p>Experimental prototype focusing on environmental design with dynamic tropical weather and interactive sand physics.</p>
+          <ul class="vr-features">
+            <li>Unity XR &amp; Interaction Toolkit</li>
+            <li>Real-time lighting transitions</li>
+            <li>Modular asset pipeline</li>
+            <li>Physics-based interactions</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -442,7 +437,7 @@
       </div>
     </section>
     
-    <!-- Resume Button -->  
+    <!-- Resume Button -->
     <div style="text-align: center; margin: 40px 0;">
       <a href="https://drive.google.com/file/d/1j3zozi6yjGdorVoi72RYby39SiZQmgn8/view" class="resume-btn" target="_blank">View Resume</a>
     </div>
